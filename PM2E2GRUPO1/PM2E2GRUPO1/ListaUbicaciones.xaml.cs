@@ -16,5 +16,10 @@ namespace PM2E2GRUPO1
         {
             InitializeComponent();
         }
+
+        private void listaUbicaciones_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+
+        }
     }
 }

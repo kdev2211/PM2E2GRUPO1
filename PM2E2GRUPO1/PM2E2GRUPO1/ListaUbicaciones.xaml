@@ -4,7 +4,7 @@
              x:Class="PM2E2GRUPO1.ListaUbicaciones">
     <ContentPage.Content>
         <StackLayout>
-
+            <ListView x:Name="listaUbicaciones" ItemTapped="listaUbicaciones_ItemTapped"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

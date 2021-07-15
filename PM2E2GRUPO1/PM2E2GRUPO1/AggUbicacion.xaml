@@ -4,16 +4,20 @@
              x:Class="PM2E2GRUPO1.AggUbicacion">
     <ContentPage.Content>
         <StackLayout>
-            <Image x:Name="foto"/>
+            <Frame Padding="0" Margin="30, 30" WidthRequest="300" HeightRequest="350">
+                <Image x:Name="foto" Source="sample.jpg" Aspect="AspectFill"/>
+            </Frame>
+           
             <StackLayout Padding="5">
                 <Label Text="Longitud Actual:"/>
 
-                <Entry x:Name="longitud"/>
+                <Entry x:Name="longitud" IsReadOnly="True"/>
                 <Label Text="Latitud actual:"/>
-                <Entry x:Name="latitud"/>
+                <Entry x:Name="latitud"  IsReadOnly="True"/>
                 <Entry x:Name="descripcion" Placeholder="Descripcion" PlaceholderColor="Gray" />
 
                 <Button Text="GUARDAR UBICACION" x:Name="guardarUbicacion" Clicked="guardarUbicacion_Clicked"/>
+                <Button Text="VER LISTA" x:Name="verListaUbicaciones" Clicked="verListaUbicaciones_Clicked"/>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

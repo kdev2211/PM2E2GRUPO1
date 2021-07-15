@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.CommunityToolkit.Extensions;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -14,11 +15,13 @@ namespace PM2E2GRUPO1
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AggUbicacion : ContentPage
     {
-        public AggUbicacion()
+        public AggUbicacion(Double lat, Double lng)
         {
             InitializeComponent();
 
+            latitud.Text = lat.ToString();
 
+            longitud.Text = lng.ToString();
         }
 
 
@@ -49,17 +52,21 @@ namespace PM2E2GRUPO1
 
         }
 
-        private async void tomarFoto_Clicked(object sender, EventArgs e)
+
+
+        private async void guardarUbicacion_Clicked(object sender, EventArgs e)
         {
+            if (String.IsNullOrWhiteSpace(descripcion.Text))
+            {
+                await this.DisplayToastAsync("Asegurate de llenar los campos vacios", 10000);
 
-   
-
-         
+            }
         }
 
-        private void guardarUbicacion_Clicked(object sender, EventArgs e)
+        private async void verListaUbicaciones_Clicked(object sender, EventArgs e)
         {
 
+            await Navigation.PushAsync(new ListaUbicaciones());
         }
     }
 }

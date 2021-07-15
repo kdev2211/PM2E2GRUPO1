@@ -17,25 +17,48 @@ namespace PM2E2GRUPO1
         public MainPage()
         {
             InitializeComponent();
+
         }
+   
 
         private async void addUbicacion_Clicked(object sender, EventArgs e)
         {
+           
+            try
+            {
+                var request = new GeolocationRequest(GeolocationAccuracy.Best);
+                var location = await Geolocation.GetLocationAsync(request);
 
 
-
+                if (location != null)
+                {
+                    
+                    Console.WriteLine($"Latitude: {location.Latitude}, Longitude: {location.Longitude}, Altitude: {location.Altitude}");
+             
+            
 
                 String conexion = CrossConnectivity.Current.IsConnected ? "Connected" : "Disconnected";
 
-                if (conexion != "Disconnected")
+                if (conexion != "Disconnected" & location != null)
                 {
-                    await Navigation.PushAsync(new AggUbicacion());
+                    await Navigation.PushAsync(new AggUbicacion(location.Latitude, location.Longitude));
                 }
-                else {
+                else
+                {
 
                     await this.DisplayToastAsync("Asegurate de estar conectado a la red", 10000);
 
                 }
+                }
+           
+            }
+   
+            catch (Exception ex)
+            {
+                await this.DisplayToastAsync("Asegurate de estar conectado a internet o activar tu localizacion", 10000);
+            }
+
+
             }
 
 
