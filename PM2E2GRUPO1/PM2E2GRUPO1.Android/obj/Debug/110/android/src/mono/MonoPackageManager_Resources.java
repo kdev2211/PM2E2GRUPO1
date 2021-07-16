@@ -3,7 +3,10 @@ public class MonoPackageManager_Resources {
 	public static String[] Assemblies = new String[]{
 		/* We need to ensure that "PM2E2GRUPO1.Android.dll" comes first in this list. */
 		"PM2E2GRUPO1.Android.dll",
+		"Firebase.dll",
 		"FormsViewGroup.dll",
+		"LiteDB.dll",
+		"Newtonsoft.Json.dll",
 		"Plugin.Connectivity.Abstractions.dll",
 		"Plugin.Connectivity.dll",
 		"Plugin.CurrentActivity.dll",
@@ -11,6 +14,7 @@ public class MonoPackageManager_Resources {
 		"Plugin.Media.dll",
 		"Plugin.Permissions.dll",
 		"PM2E2GRUPO1.dll",
+		"System.Reactive.dll",
 		"Xamarin.Android.Support.Annotations.dll",
 		"Xamarin.Android.Support.Compat.dll",
 		"Xamarin.Android.Support.Core.Utils.dll",

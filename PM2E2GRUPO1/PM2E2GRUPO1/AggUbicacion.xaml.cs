@@ -1,4 +1,5 @@
-﻿using Plugin.Media;
+﻿using Android.Graphics;
+using Plugin.Media;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -15,13 +16,16 @@ namespace PM2E2GRUPO1
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AggUbicacion : ContentPage
     {
+        Byte[] StringA { get; set; }
+       String str { get; set; }
+        FirebaseHelper firebaseHelper = new FirebaseHelper();
         public AggUbicacion(Double lat, Double lng)
         {
             InitializeComponent();
 
-            latitud.Text = lat.ToString();
+            txtlatitud.Text = lat.ToString();
 
-            longitud.Text = lng.ToString();
+            txtlongitud.Text = lng.ToString();
         }
 
 
@@ -30,8 +34,8 @@ namespace PM2E2GRUPO1
             var tomarfoto = await CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions
             {
                 Directory = "MiApp",
-                Name = "Prueba.jpg",
-                SaveToAlbum = true
+                Name = "Prueba.jpg"
+              
 
             });
 
@@ -49,18 +53,42 @@ namespace PM2E2GRUPO1
                 });
             }
 
+            byte[] imageArray = null;
+
+            //Insercion de mapa de bytes
+            using (MemoryStream memory = new MemoryStream())
+            {
+
+                Stream stream = tomarfoto.GetStream();
+                stream.CopyTo(memory);
+                imageArray = memory.ToArray();
+            }
+
+         
+
+            string str = Encoding.Default.GetString(imageArray);
 
         }
-
-
-
+    
+    
         private async void guardarUbicacion_Clicked(object sender, EventArgs e)
         {
-            if (String.IsNullOrWhiteSpace(descripcion.Text))
+   
+
+            if (String.IsNullOrWhiteSpace(txtdescripcion.Text))
             {
                 await this.DisplayToastAsync("Asegurate de llenar los campos vacios", 10000);
 
             }
+            else
+            {
+                await firebaseHelper.AddUbicacion(txtdescripcion.Text, txtlatitud.Text, txtlongitud.Text, str);
+                txtdescripcion.Text = string.Empty;
+         
+                await DisplayAlert("Success", "Person Added Successfully", "OK");
+         
+            }
+   
         }
 
         private async void verListaUbicaciones_Clicked(object sender, EventArgs e)

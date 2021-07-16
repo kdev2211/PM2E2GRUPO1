@@ -14,3 +14,8 @@ C:\Dev\PM2E2GRUPO1\PM2E2GRUPO1\PM2E2GRUPO1\obj\Debug\netstandard2.0\XamlC.stamp
 C:\Dev\PM2E2GRUPO1\PM2E2GRUPO1\PM2E2GRUPO1\obj\Debug\netstandard2.0\PM2E2GRUPO1.dll
 C:\Dev\PM2E2GRUPO1\PM2E2GRUPO1\PM2E2GRUPO1\obj\Debug\netstandard2.0\ref\PM2E2GRUPO1.dll
 C:\Dev\PM2E2GRUPO1\PM2E2GRUPO1\PM2E2GRUPO1\obj\Debug\netstandard2.0\PM2E2GRUPO1.pdb
+C:\Dev\PM2E2GRUPO1\PM2E2GRUPO1\PM2E2GRUPO1\bin\Debug\netstandard2.0\Mono.Android.dll
+C:\Dev\PM2E2GRUPO1\PM2E2GRUPO1\PM2E2GRUPO1\bin\Debug\netstandard2.0\Mono.Android.pdb
+C:\Dev\PM2E2GRUPO1\PM2E2GRUPO1\PM2E2GRUPO1\bin\Debug\netstandard2.0\Mono.Android.xml
+C:\Dev\PM2E2GRUPO1\PM2E2GRUPO1\PM2E2GRUPO1\obj\Debug\netstandard2.0\PM2E2GRUPO1.csproj.CopyComplete
+C:\Dev\PM2E2GRUPO1\PM2E2GRUPO1\PM2E2GRUPO1\obj\Debug\netstandard2.0\detalleUbicacion.xaml.g.cs

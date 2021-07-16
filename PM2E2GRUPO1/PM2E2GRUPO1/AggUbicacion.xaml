@@ -11,10 +11,10 @@
             <StackLayout Padding="5">
                 <Label Text="Longitud Actual:"/>
 
-                <Entry x:Name="longitud" IsReadOnly="True"/>
+                <Entry x:Name="txtlongitud" IsReadOnly="True"/>
                 <Label Text="Latitud actual:"/>
-                <Entry x:Name="latitud"  IsReadOnly="True"/>
-                <Entry x:Name="descripcion" Placeholder="Descripcion" PlaceholderColor="Gray" />
+                <Entry x:Name="txtlatitud"  IsReadOnly="True"/>
+                <Entry x:Name="txtdescripcion" Placeholder="Descripcion" PlaceholderColor="Gray" />
 
                 <Button Text="GUARDAR UBICACION" x:Name="guardarUbicacion" Clicked="guardarUbicacion_Clicked"/>
                 <Button Text="VER LISTA" x:Name="verListaUbicaciones" Clicked="verListaUbicaciones_Clicked"/>
